@@ -38,8 +38,8 @@ public class Homework3 {
         sowGroups(List.of(student2));
     }
 
-    public static void sowGroups(List<SchoolMember> studyGroup) {
-        for (SchoolMember schoolMember : studyGroup) {
+    public static void sowGroups(List<SchoolMember> studyGroups) {
+        for (SchoolMember schoolMember : studyGroups) {
             System.out.println(schoolMember);
         }
     }
