@@ -26,21 +26,21 @@ public class Homework3 {
         ItTeacher teacher2 = new ItTeacher("Nikolay", "Pavlov", 27, "Pavlov@gmail.com", 5);
         teacher2.setGroups(List.of(studyGroup2));
 
-        List<SchoolMember> studyGroup = new ArrayList<>();
-        studyGroup.add(teacher1);
-        studyGroup.add(teacher2);
-        studyGroup.add(student1);
-        studyGroup.add(student2);
+        List<SchoolMember> studyGroups = new ArrayList<>();
+        studyGroups.add(teacher1);
+        studyGroups.add(teacher2);
+        studyGroups.add(student1);
+        studyGroups.add(student2);
 
-        sowGroup(List.of(teacher1));
-        sowGroup(List.of(teacher2));
-        sowGroup(List.of(student1));
-        sowGroup(List.of(student2));
+        sowGroups(List.of(teacher1));
+        sowGroups(List.of(teacher2));
+        sowGroups(List.of(student1));
+        sowGroups(List.of(student2));
     }
 
-    public static void sowGroup(List<SchoolMember> studyGroup) {
-        for (int i = 0; i < studyGroup.size(); i++) {
-            System.out.println(studyGroup.get(0));
+    public static void sowGroups(List<SchoolMember> studyGroup) {
+        for (SchoolMember schoolMember : studyGroup) {
+            System.out.println(schoolMember);
         }
     }
 }
