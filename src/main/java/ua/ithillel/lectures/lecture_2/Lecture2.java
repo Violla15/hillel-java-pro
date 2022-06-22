@@ -1,4 +1,4 @@
-package ua.ithillel.lecrure.lecture_2;
+package ua.ithillel.lectures.lecture_2;
 
 import java.util.Arrays;
 

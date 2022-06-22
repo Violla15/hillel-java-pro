@@ -1,4 +1,5 @@
 package ua.ithillel.homeworks.homework3.school;
+
 public class StudyGroup {
 
     protected String nameGroup;

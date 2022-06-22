@@ -1,4 +1,4 @@
-package ua.ithillel.lecrure.lecture3.school;
+package ua.ithillel.lectures.lecture3.school;
 
 public class Teacher extends SchoolMember{
 
