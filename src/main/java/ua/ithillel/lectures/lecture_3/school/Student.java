@@ -1,4 +1,4 @@
-package ua.ithillel.lectures.lecture3.school;
+package ua.ithillel.lectures.lecture_3.school;
 
 import java.util.List;
 
