@@ -5,7 +5,6 @@ import ua.ithillel.homeworks.homework3.school.ItTeacher;
 import ua.ithillel.homeworks.homework3.school.SchoolMember;
 import ua.ithillel.homeworks.homework3.school.StudyGroup;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Homework3 {
@@ -26,16 +25,9 @@ public class Homework3 {
         ItTeacher teacher2 = new ItTeacher("Nikolay", "Pavlov", 27, "Pavlov@gmail.com", 5);
         teacher2.setGroups(List.of(studyGroup2));
 
-        List<SchoolMember> studyGroups = new ArrayList<>();
-        studyGroups.add(teacher1);
-        studyGroups.add(teacher2);
-        studyGroups.add(student1);
-        studyGroups.add(student2);
+        List<SchoolMember> studyGroups = List.of(teacher1,teacher2,student1,student2);
+        sowGroups(studyGroups);
 
-        sowGroups(List.of(teacher1));
-        sowGroups(List.of(teacher2));
-        sowGroups(List.of(student1));
-        sowGroups(List.of(student2));
     }
 
     public static void sowGroups(List<SchoolMember> studyGroups) {
