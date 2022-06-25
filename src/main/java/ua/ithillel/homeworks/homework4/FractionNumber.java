@@ -54,10 +54,8 @@ public final class FractionNumber {
 
     public FractionNumber simplify() {
         int nod = nod(numerator, denominator);
-        int a = numerator;
-        int b = denominator;
-        a = numerator / nod;
-        b = denominator / nod;
+        int a = numerator / nod;
+        int b = denominator / nod;
         return new FractionNumber(a, b);
     }
 
