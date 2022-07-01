@@ -3,10 +3,9 @@ package ua.ithillel.homeworks.homework5.storage;
 import ua.ithillel.homeworks.homework5.car.Car;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-public class WarehouseStorage implements SowStorageCars {
+public class WarehouseStorage implements CarStorage {
     private List<Car> warehouse;
 
     public WarehouseStorage() {
@@ -28,9 +27,8 @@ public class WarehouseStorage implements SowStorageCars {
     @Override
     public void showStorageCars() {
         System.out.println("Stay in the warehouse storage :");
-        Iterator ir = warehouse.iterator();
-        while (ir.hasNext()) {
-            System.out.println(ir.next());
+        for (Car car : warehouse) {
+            System.out.println(car.toString());
         }
     }
 }

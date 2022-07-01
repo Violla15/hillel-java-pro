@@ -3,10 +3,9 @@ package ua.ithillel.homeworks.homework5.storage;
 import ua.ithillel.homeworks.homework5.car.Car;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-public class StorageInTheParkingLot implements SowStorageCars {
+public class StorageInTheParkingLot implements CarStorage {
     private List<Car> parking;
 
     public StorageInTheParkingLot() {
@@ -28,11 +27,11 @@ public class StorageInTheParkingLot implements SowStorageCars {
 
     public void showStorageCars() {
         System.out.println("Stay in the parking lot : ");
-        Iterator ir = parking.iterator();
-        while (ir.hasNext()) {
-            System.out.println(ir.next());
+        for (Car car : parking) {
+            System.out.println(car.toString());
         }
     }
 }
+
 
 

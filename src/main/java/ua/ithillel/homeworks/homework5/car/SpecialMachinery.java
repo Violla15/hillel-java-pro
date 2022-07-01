@@ -1,11 +1,11 @@
 package ua.ithillel.homeworks.homework5.car;
 
-public class SpecialEquipment extends Car {
+public class SpecialMachinery extends Car {
 
     private String type;
     private int weight;
 
-    public SpecialEquipment(String brand, String yearOfManufacture, int price, Equipment equipment, String countryOfManufacture, String dateOfSale, String nameOfTheBuyer, String type, int weight) {
+    public SpecialMachinery(String brand, String yearOfManufacture, int price, Equipment equipment, String countryOfManufacture, String dateOfSale, String nameOfTheBuyer, String type, int weight) {
         super(brand, yearOfManufacture, price, equipment, countryOfManufacture, dateOfSale, nameOfTheBuyer);
         this.type = type;
         this.weight = weight;

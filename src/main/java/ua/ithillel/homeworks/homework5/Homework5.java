@@ -21,7 +21,7 @@ public class Homework5 {
         UsedCar gilly = new UsedCar("Gilly", "2015", 9000, Equipment.BUSINESS, "Japan", "30.08.2018", "S.S. Li", 40000, "B.V. Philipchuk");
         parkingLot.addCar(gilly);
 
-        SpecialEquipment garbageTruck = new SpecialEquipment("Truck", "2020", 90000, Equipment.SPECIAL_EQUIPMENT, "Germany", "20.02.2022", "D.B. Meier", "garbage truck", 3000);
+        SpecialMachinery garbageTruck = new SpecialMachinery("Truck", "2020", 90000, Equipment.SPECIAL_EQUIPMENT, "Germany", "20.02.2022", "D.B. Meier", "garbage truck", 3000);
         warehouseStorage.addCar(garbageTruck);
 
         parkingLot.showStorageCars();
