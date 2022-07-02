@@ -1,7 +1,7 @@
-package ua.ithillel.lectures.lecture3;
+package ua.ithillel.lectures.lecture_3;
 
-import ua.ithillel.lectures.lecture3.school.Student;
-import ua.ithillel.lectures.lecture3.school.Teacher;
+import ua.ithillel.lectures.lecture_3.school.Student;
+import ua.ithillel.lectures.lecture_3.school.Teacher;
 
 public class Lecture3 {
     public static void main(String[] args) {
