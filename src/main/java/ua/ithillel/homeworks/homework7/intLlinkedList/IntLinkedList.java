@@ -1,11 +1,11 @@
-package ua.ithillel.homeworks.homework7.linkedList;
+package ua.ithillel.homeworks.homework7.intLlinkedList;
+
 import java.util.Arrays;
 
 public class IntLinkedList implements IntList, IntStack, IntQueue {
     public static class Item {
         int value;
         Item next;
-
         Item prev;
 
         public Item(int value) {
@@ -20,10 +20,9 @@ public class IntLinkedList implements IntList, IntStack, IntQueue {
     @Override
     public void add(int value) {
         Item newItem = new Item(value);
-        if (fstItem == null) {
-            newItem.next = null;
-            newItem.prev = null;
+        if (size == 0) {
             fstItem = newItem;
+            lstItem = newItem;
         } else {
             lstItem.next = newItem;
             newItem.prev = lstItem;
@@ -41,13 +40,13 @@ public class IntLinkedList implements IntList, IntStack, IntQueue {
             fstItem = newItem;
             size++;
         } else if (index > size || index < 0) {
-            throw new IndexOutOfBoundsException("Incorrect index");
+            throw new IndexOutOfBoundsException("Index Out Of Bounds Exception");
         } else if (index == size) {
             add(value);
         } else {
             Item newItem2 = fstItem;
             for (int i = 0; i < index; i++) {
-               newItem2 = newItem2.next;
+                newItem2 = newItem2.next;
             }
             Item newItemPrev = newItem2.prev;
             newItemPrev.next = newItem2;
@@ -60,7 +59,15 @@ public class IntLinkedList implements IntList, IntStack, IntQueue {
         return true;
     }
 
+    @Override
+    public int get(int index) {
+        return getItemByIndex(index).value;
+    }
+
     private Item getItemByIndex(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index Out Of Bounds Exception");
+        }
         Item current = fstItem;
         for (int i = 0; i < index; i++) {
             current = current.next;
@@ -72,11 +79,6 @@ public class IntLinkedList implements IntList, IntStack, IntQueue {
     public void clear() {
         fstItem = lstItem = null;
         size = 0;
-    }
-
-    @Override
-    public int get(int index) {
-        return getItemByIndex(index).value;
     }
 
     @Override
@@ -96,31 +98,32 @@ public class IntLinkedList implements IntList, IntStack, IntQueue {
         } else if (index == 0) {
             fstItem = fstItem.next;
         } else {
-            Item  finedValue = getItemByIndex(index - 1);
-            Item  removedValue = getItemByIndex(index);
-            finedValue.next =removedValue.next;
+            Item finedValue = getItemByIndex(index - 1);
+            Item removedValue = getItemByIndex(index);
+            finedValue.next = removedValue.next;
         }
         size--;
-        return false;
+        return true;
     }
 
     @Override
     public boolean removeByValue(int value) {
-        if (value == 0) {
-            value = fstItem.value;
-            fstItem = fstItem.next;
-            if (fstItem == null) {
-                lstItem = null;
-            }
-        } else {
-            Item prev = getItemByIndex(value - 1);
-            value = prev.next.value;
-            prev.next = prev.next.next;
-            if (value == size - 1) {
-                lstItem = prev;
+        Item preItem = null;
+        Item item = fstItem;
+        boolean elementFound = false;
+        for (int i = 0; i < size; i++) {
+            if (item.value == value) {
+                if (preItem != null) {
+                    preItem.next = item.next;
+                }
+                item = item.next;
+                elementFound = true;
+            } else {
+                preItem = item;
+                item = item.next;
             }
         }
-        return true;
+        return elementFound;
     }
 
     @Override
@@ -128,28 +131,27 @@ public class IntLinkedList implements IntList, IntStack, IntQueue {
         IntList list = new IntLinkedList();
         for (int i = fromIndex; i < toIndex; i++) {
             list.add(get(i));
+            if (fromIndex < 0 || toIndex > size) {
+                throw new IndexOutOfBoundsException("Index Out Of Bounds Exception");
+            }
         }
         return list;
     }
 
     @Override
     public int[] toArray() {
-        if (isEmpty()) {
-            return null;
-        }
-        int length = size(), i = 0;
-        int[] myArray = new int[length];
-        Item element;
-        for (element = fstItem; element != null; element = element.next) {
+        int[] myArray = new int[size];
+        Item element = fstItem;
+        for (int i = 0; i < size; i++) {
             myArray[i] = element.value;
-            i++;
+            element = element.next;
         }
         return myArray;
     }
 
     @Override
     public int remove() {
-        Item  removedFirstValue = fstItem;
+        Item removedFirstValue = fstItem;
         remove(0);
         return removedFirstValue.value;
     }
@@ -170,6 +172,7 @@ public class IntLinkedList implements IntList, IntStack, IntQueue {
     public int peek() {
         return fstItem.value;
     }
+
     @Override
     public String toString() {
         return Arrays.toString(toArray());

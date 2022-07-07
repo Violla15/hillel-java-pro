@@ -1,6 +1,6 @@
 package ua.ithillel.homeworks.homework7;
 
-import ua.ithillel.homeworks.homework7.linkedList.IntLinkedList;
+import ua.ithillel.homeworks.homework7.intLlinkedList.IntLinkedList;
 
 
 public class Homework7 {
@@ -9,8 +9,8 @@ public class Homework7 {
         System.out.println("Added operation : ");
         intLinkedList.add(5);
         intLinkedList.add(4);
-        intLinkedList.add(9);
         intLinkedList.add(3);
+        intLinkedList.add(2);
         intLinkedList.add(7);
         System.out.println(intLinkedList);
 
@@ -18,6 +18,7 @@ public class Homework7 {
 
         System.out.println("Removed operation : ");
         intLinkedList.remove(2);
+        intLinkedList.removeByValue(3);
         System.out.println(intLinkedList);
 
         System.out.println("SubList : " + intLinkedList.subList(1, 4));
