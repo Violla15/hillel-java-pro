@@ -1,4 +1,4 @@
-package ua.ithillel.homeworks.homework7.intLlinkedList;
+package ua.ithillel.homeworks.homework7.list;
 
 import java.util.Arrays;
 
@@ -8,21 +8,23 @@ public class IntLinkedList implements IntList, IntStack, IntQueue {
         Item next;
         Item prev;
 
+        public Item() {
+        }
+
         public Item(int value) {
             this.value = value;
         }
     }
 
-    public Item fstItem;
-    public Item lstItem;
-    public int size;
+    private Item fstItem;
+    private Item lstItem;
+    private int size;
 
     @Override
     public void add(int value) {
         Item newItem = new Item(value);
         if (size == 0) {
             fstItem = newItem;
-            lstItem = newItem;
         } else {
             lstItem.next = newItem;
             newItem.prev = lstItem;
@@ -108,35 +110,60 @@ public class IntLinkedList implements IntList, IntStack, IntQueue {
 
     @Override
     public boolean removeByValue(int value) {
-        Item preItem = null;
-        Item item = fstItem;
-        boolean elementFound = false;
-        for (int i = 0; i < size; i++) {
-            if (item.value == value) {
-                if (preItem != null) {
-                    preItem.next = item.next;
-                }
-                item = item.next;
-                elementFound = true;
+        if (size == 0) {
+            throw new IndexOutOfBoundsException("Index Out Of Bounds Exception");
+        } else if (size == 1) {
+            fstItem = null;
+            lstItem = null;
+            size = 0;
+            return true;
+        } else {
+            Item newItemPrev = searchingPreviousItem(value);
+            assert newItemPrev != null;
+            if (newItemPrev.value == 0) {
+
+                fstItem = fstItem.next;
             } else {
-                preItem = item;
-                item = item.next;
+                if (lstItem.value == value) {
+                    newItemPrev.next = null;
+                    lstItem = newItemPrev;
+                } else {
+                    newItemPrev.next = newItemPrev.next.next;
+                }
+            }
+            size--;
+            return true;
+        }
+    }
+
+    private Item searchingPreviousItem(int element) {
+        if (fstItem.value == element) {
+            return new Item();
+        } else {
+            Item newItem = fstItem;
+            while (newItem.next != null) {
+                if (newItem.next.value == element) {
+                    return newItem;
+                } else {
+                    newItem = newItem.next;
+                }
             }
         }
-        return elementFound;
+        return null;
     }
 
     @Override
     public IntList subList(int fromIndex, int toIndex) {
         IntList list = new IntLinkedList();
+        if (fromIndex < 0 || toIndex > size) {
+            return list;
+        }
         for (int i = fromIndex; i < toIndex; i++) {
             list.add(get(i));
-            if (fromIndex < 0 || toIndex > size) {
-                throw new IndexOutOfBoundsException("Index Out Of Bounds Exception");
-            }
         }
         return list;
     }
+
 
     @Override
     public int[] toArray() {
