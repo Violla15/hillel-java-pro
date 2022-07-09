@@ -1,4 +1,4 @@
-package ua.ithillel.lectures.lecrure_4.immutable;
+package ua.ithillel.lectures.lecture_4.immutable;
 
 import java.util.Arrays;
 

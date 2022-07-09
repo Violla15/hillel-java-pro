@@ -1,4 +1,4 @@
-package ua.ithillel.lectures.lecrure_4.encapsulation;
+package ua.ithillel.lectures.lecture_4.encapsulation;
 
 public class Encapsulation {
     private int myInt = 5;

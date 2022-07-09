@@ -1,4 +1,4 @@
-package ua.ithillel.lectures.lecrure_4.polymorphism;
+package ua.ithillel.lectures.lecture_4.polymorphism;
 
 public class USBPlayer extends AudioPlayer {
 
