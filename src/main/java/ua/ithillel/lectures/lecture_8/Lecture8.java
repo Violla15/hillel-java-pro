@@ -1,6 +1,6 @@
 package ua.ithillel.lectures.lecture_8;
 
-import ua.ithillel.lectures.lecture_8.hashMap.Employee;
+import ua.ithillel.lectures.lecture_8.hashmap.Employee;
 import ua.ithillel.lectures.lecture_8.tree.Tree;
 
 import java.util.HashMap;

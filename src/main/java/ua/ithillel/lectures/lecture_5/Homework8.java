@@ -1,4 +1,6 @@
-package ua.ithillel.homeworks.homework8;
+package ua.ithillel.lectures.lecture_5;
+
+import ua.ithillel.homeworks.homework8.Node;
 
 import java.util.*;
 
