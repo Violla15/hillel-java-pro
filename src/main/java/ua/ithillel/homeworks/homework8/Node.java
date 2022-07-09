@@ -5,11 +5,11 @@ import java.util.ArrayList;
 
 public class Node {
     private final String name;
-    private List children;
+    private List<Node> children;
 
     public Node(String name) {
         this.name = name;
-        this.children = new ArrayList<Node>();
+        this.children = new ArrayList<>();
     }
 
     public void add(Node a) {
@@ -19,17 +19,15 @@ public class Node {
     public void printAsAHierarchy(int node) {
         for (int i = 0; i < node; i++) System.out.print("--->  ");
         System.out.println(this.name);
-        for (Object child : this.children) {
-            Node a = (Node) child;
-            a.printAsAHierarchy(node + 1 );
+        for (Node child : this.children) {
+            child.printAsAHierarchy(node + 1);
         }
     }
 
     public void insert(Node newNode, String parentName) {
-        for (Object child : this.children) {
-            Node a = (Node) child;
-            if (parentName.equals(a.name)) {
-                a.add(newNode);
+        for (Node child : this.children) {
+            if (parentName.equals(child.name)) {
+                child.add(newNode);
                 break;
             }
         }

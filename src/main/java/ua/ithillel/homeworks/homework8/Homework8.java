@@ -34,7 +34,7 @@ public class Homework8 {
         List<Integer> randomNumbers = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i <= size; i++) {
-            randomNumbers.add(random.nextInt(0, 100));
+            randomNumbers.add(random.nextInt(0, 101));
         }
         System.out.println(randomNumbers);
 
