@@ -1,10 +1,10 @@
-package ua.ithillel.lectures.lecrure_4;
+package ua.ithillel.lectures.lecture_4;
 
-import ua.ithillel.lectures.lecrure_4.encapsulation.Encapsulation;
-import ua.ithillel.lectures.lecrure_4.immutable.ImmutableStudent;
-import ua.ithillel.lectures.lecrure_4.polymorphism.AudioPlayer;
-import ua.ithillel.lectures.lecrure_4.polymorphism.CDPlayer;
-import ua.ithillel.lectures.lecrure_4.polymorphism.USBPlayer;
+import ua.ithillel.lectures.lecture_4.encapsulation.Encapsulation;
+import ua.ithillel.lectures.lecture_4.immutable.ImmutableStudent;
+import ua.ithillel.lectures.lecture_4.polymorphism.AudioPlayer;
+import ua.ithillel.lectures.lecture_4.polymorphism.CDPlayer;
+import ua.ithillel.lectures.lecture_4.polymorphism.USBPlayer;
 
 import java.util.ArrayList;
 import java.util.List;
