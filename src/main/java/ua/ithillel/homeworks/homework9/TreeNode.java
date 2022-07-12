@@ -23,12 +23,47 @@ public class TreeNode {
         return t;
     }
 
-    public static void treeTraversal(TreeNode node) {
-        if (node != null) {
-            treeTraversal(node.left);
-            System.out.print(node.val + " ---> ");
-            treeTraversal(node.right);
+    static class Trunk {
+        Trunk prev;
+        String string;
+
+        Trunk(Trunk prev, String string) {
+            this.prev = prev;
+            this.string = string ;
         }
+    }
+
+    public static void showTrunks(Trunk p) {
+        if (p == null) {
+            return;
+        }
+        showTrunks(p.prev);
+        System.out.print(p.string);
+    }
+
+    public static void printTree(TreeNode root, Trunk prev, boolean isLeft) {
+        if (root == null) {
+            return;
+        }
+        String prev_str = "    ";
+        Trunk trunk = new Trunk(prev, prev_str);
+        printTree(root.right, trunk, true);
+        if (prev == null) {
+            trunk.string = "———";
+        } else if (isLeft) {
+            trunk.string = ".———";
+            prev_str = "   |";
+        } else {
+            trunk.string = "`———";
+            prev.string = prev_str;
+        }
+        showTrunks(trunk);
+        System.out.println(" " + root.val);
+        if (prev != null) {
+            prev.string = prev_str;
+        }
+        trunk.string = "   |";
+        printTree(root.left, trunk, false);
     }
 
     public int getVal() {
