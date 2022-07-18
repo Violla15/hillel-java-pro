@@ -1,6 +1,7 @@
-package ua.ithillel.homeworks.homework10.user;
+package ua.ithillel.homeworks.homework10.datamapper;
 
 import ua.ithillel.homeworks.homework10.exeption.UserNotFoundException;
+import ua.ithillel.homeworks.homework10.user.User;
 
 import java.util.List;
 
