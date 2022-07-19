@@ -12,9 +12,8 @@ import java.util.List;
 public class FileDataMapper implements DataMapper {
     public final static String FILE = "src/main/java/ua/ithillel/homeworks/homework10/users.csv";
     static File file = new File(FILE);
-    static List<User> users = new ArrayList<>();
 
-    public static void fileReader() {
+    public static void getUsers(List<User> users) {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
             String temp = "";
             for (int i = 0; i < file.length(); i++) {
@@ -37,52 +36,57 @@ public class FileDataMapper implements DataMapper {
     }
 
     @Override
-    public User findUserById(int id) {
-        fileReader();
+    public User findUserById(int id) throws UserNotFoundException {
         String idStr = String.valueOf(id);
-        for (User user : users)
-            try {
-                if (user.getId().equals(idStr)) {
-                    return user;
-                }
-            } catch (UserNotFoundException e) {
-                e.printStackTrace();
+        List<User> users = new ArrayList<>();
+        getUsers(users);
+        if (id == 0) {
+            throw new IllegalArgumentException("User id  must not be null");
+        }
+        for (User user : users) {
+            if (user.getId().equals(idStr)) {
+                return user;
             }
-        return null;
-    }
-
-
-    @Override
-    public User findUserByUsername(String userName) {
-        fileReader();
-        for (User user : users)
-            try {
-                if (user.getUsername().equals(userName)) {
-                    return user;
-                }
-            } catch (UserNotFoundException e) {
-                e.printStackTrace();
-            }
-        return null;
+        }
+        throw new UserNotFoundException("User with id - " + id + " not found.");
     }
 
     @Override
-    public User findUserByEmail(String email) {
-        fileReader();
-        for (User user : users)
-            try {
-                if (user.getEmail().equals(email)) {
-                    return user;
-                }
-            } catch (UserNotFoundException e) {
-                e.printStackTrace();
+    public User findUserByUsername(String userName) throws UserNotFoundException {
+        List<User> users = new ArrayList<>();
+        getUsers(users);
+        if (userName == null) {
+            throw new IllegalArgumentException("User name  must not be null");
+        }
+        for (User user : users) {
+            if (user.getUsername().equals(userName)) {
+                return user;
             }
-        return null;
+        }
+        throw new UserNotFoundException("User with name - " + userName + " not found.");
+    }
+
+    @Override
+    public User findUserByEmail(String email) throws UserNotFoundException {
+        List<User> users = new ArrayList<>();
+        getUsers(users);
+        if (email == null) {
+            throw new IllegalArgumentException("User email  must not be null");
+        }
+        for (User user : users) {
+            if (user.getEmail().equals(email)) {
+                return user;
+            }
+        }
+        throw new UserNotFoundException("User with email - " + email + " not found.");
     }
 
     @Override
     public List<User> findUsersByIds(List<Integer> ids) throws UserNotFoundException {
         List<User> users = new ArrayList<>();
+        if (ids == null) {
+            throw new IllegalArgumentException("List with id  must not be null");
+        }
         for (Integer byId : ids) {
             users.add(findUserById(byId));
         }

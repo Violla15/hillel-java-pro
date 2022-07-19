@@ -1,7 +1,5 @@
 package ua.ithillel.homeworks.homework10.user;
 
-import ua.ithillel.homeworks.homework10.user.Role;
-
 public class User {
     private String id;
     private String username;
@@ -15,7 +13,6 @@ public class User {
         this.email = email;
         this.password = password;
         this.role = role;
-
     }
 
     public String getId() {

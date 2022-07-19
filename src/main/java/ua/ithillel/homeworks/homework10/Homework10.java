@@ -1,6 +1,5 @@
 package ua.ithillel.homeworks.homework10;
 
-import ua.ithillel.homeworks.homework10.exeption.UserNotFoundException;
 import ua.ithillel.homeworks.homework10.datamapper.FileDataMapper;
 
 import java.util.ArrayList;
