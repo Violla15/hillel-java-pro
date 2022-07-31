@@ -1,4 +1,4 @@
-package ua.ithillel.homeworks.homework13;
+package ua.ithillel.homeworks.homework13.person;
 
 import ua.ithillel.homeworks.homework13.annotation.XmlElement;
 import ua.ithillel.homeworks.homework13.annotation.XmlSerializable;
@@ -18,6 +18,7 @@ public class Person {
         this.surName = surName;
         this.address = address;
     }
+
 
     public String getName() {
         return name;
@@ -42,5 +43,6 @@ public class Person {
     public void setAddress(String address) {
         this.address = address;
     }
+
 
 }

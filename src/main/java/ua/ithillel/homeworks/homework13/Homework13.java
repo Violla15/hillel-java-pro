@@ -1,6 +1,7 @@
 package ua.ithillel.homeworks.homework13;
 
 import ua.ithillel.homeworks.homework13.exception.XmlSerializableException;
+import ua.ithillel.homeworks.homework13.person.Person;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ public class Homework13 {
 
         XmlSerializer xmlSerializer = new XmlSerializer();
         xmlSerializer.serialize(people);
+
 
     }
 }
