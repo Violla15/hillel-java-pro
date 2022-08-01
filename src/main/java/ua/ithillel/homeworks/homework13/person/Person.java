@@ -3,8 +3,9 @@ package ua.ithillel.homeworks.homework13.person;
 import ua.ithillel.homeworks.homework13.annotation.XmlElement;
 import ua.ithillel.homeworks.homework13.annotation.XmlSerializable;
 
+
 @XmlSerializable(key = "Person")
-public class Person {
+public class Person{
 
     @XmlElement(key = "firstName")
     private String name;
@@ -12,6 +13,7 @@ public class Person {
     private String surName;
     @XmlElement
     private String address;
+
 
     public Person(String name, String surName, String address) {
         this.name = name;
@@ -43,6 +45,5 @@ public class Person {
     public void setAddress(String address) {
         this.address = address;
     }
-
 
 }

@@ -8,42 +8,45 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-public class XmlSerializer<T> {
-    List<String> people = new ArrayList<>();
+public class XmlSerializer {
 
-    public List<String> serialize(List<T> objects) throws XmlSerializableException {
+    public <T> List<String> serialize(List<T> objects) throws XmlSerializableException {
+        List<String> stringList = new ArrayList<>();
         if (!objects.isEmpty()) {
             for (T t : objects) {
                 Class<?> personClass = t.getClass();
-                if (personClass.isAnnotationPresent(XmlSerializable.class)) {
-                    people.add("<" + personClass.getAnnotation(XmlSerializable.class).key() + ">\n");
-                    Field[] fields = personClass.getDeclaredFields();
-                    for (Field field : fields) {
-                        if (field.isAnnotationPresent(XmlElement.class)) {
-                            String key = field.getAnnotation(XmlElement.class).key();
-                            field.setAccessible(true);
-                            if (!key.equals("")) {
-                                try {
-                                    people.add("   <" + key + ">" + field.get(t) + "</" + key + ">\n");
-                                } catch (IllegalAccessException e) {
-                                    e.printStackTrace();
-                                }
-                            } else {
-                                try {
-                                    people.add("   <" + field.getName() + ">" + field.get(t) + "</" + field.getName() + ">\n");
-                                } catch (IllegalAccessException e) {
-                                    e.printStackTrace();
-                                }
+                if (!personClass.isAnnotationPresent(XmlSerializable.class)) {
+                    throw new XmlSerializableException("The class with name <Class> is not annotated with @XmlSerializable");
+                }
+                if (!personClass.getAnnotation(XmlSerializable.class).key().equals("")) {
+                    stringList.add("<" + personClass.getAnnotation(XmlSerializable.class).key() + ">");
+                } else {
+                    stringList.add("<" + personClass.getAnnotation(XmlSerializable.class).getClass() + ">");
+                }
+                Field[] fields = personClass.getDeclaredFields();
+                for (Field field : fields) {
+                    if (field.isAnnotationPresent(XmlElement.class)) {
+                        String key = field.getAnnotation(XmlElement.class).key();
+                        field.setAccessible(true);
+                        if (!key.equals("")) {
+                            try {
+                                stringList.add("   <" + key + ">" + field.get(t) + "</" + key + ">");
+                            } catch (IllegalAccessException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            try {
+                                stringList.add("   <" + field.getName() + ">" + field.get(t) + "</" + field.getName() + ">");
+                            } catch (IllegalAccessException e) {
+                                e.printStackTrace();
                             }
                         }
                     }
                 }
-                people.add("</" + personClass.getAnnotation(XmlSerializable.class).key() + ">\n");
+                stringList.add("</" + personClass.getAnnotation(XmlSerializable.class).key() + ">");
             }
-            System.out.println(people);
-            return people;
         }
-        throw new XmlSerializableException("The class with name <Class> is not annotated with @XmlSerializable");
+        return stringList;
     }
 }
 
