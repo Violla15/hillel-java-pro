@@ -20,8 +20,10 @@ public class XmlSerializer {
                 }
                 if (!personClass.getAnnotation(XmlSerializable.class).key().equals("")) {
                     stringList.add("<" + personClass.getAnnotation(XmlSerializable.class).key() + ">");
-                } else {
-                    stringList.add("<" + personClass.getAnnotation(XmlSerializable.class).getClass() + ">");
+                } else if (personClass.getAnnotation(XmlSerializable.class).key() == null) {
+                    stringList.add("< >");
+                }else {
+                    stringList.add("<" + personClass.getAnnotation(XmlSerializable.class).annotationType().getSimpleName() + ">");
                 }
                 Field[] fields = personClass.getDeclaredFields();
                 for (Field field : fields) {
