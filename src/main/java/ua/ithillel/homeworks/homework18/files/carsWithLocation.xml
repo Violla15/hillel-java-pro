@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cars>
+    <car>
+        <name>plymouth satellite</name>
+        <milesPerGallon>0</milesPerGallon>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <horsepower>150</horsepower>
+        <year>1970-01-01T00:00:00+03:00</year>
+        <origin>USA</origin>
+        <location>
+            <country>USA</country>
+            <city>Las-Vegas</city>
+            <street>12 Strip</street>
+            <house>23</house>
+        </location>
+    </car>
+    <car>
+        <name>chevrolet impala</name>
+        <milesPerGallon>0</milesPerGallon>
+        <cylinders>8</cylinders>
+        <displacement>454</displacement>
+        <horsepower>220</horsepower>
+        <year>1970-01-01T00:00:00+03:00</year>
+        <origin>USA</origin>
+        <location>
+            <country>USA</country>
+            <city>NY</city>
+            <street>1 Jason Street</street>
+            <house>22</house>
+        </location>
+    </car>
+    <car>
+        <name>ford torino (sw)</name>
+        <milesPerGallon>0</milesPerGallon>
+        <cylinders>8</cylinders>
+        <displacement>351</displacement>
+        <horsepower>153</horsepower>
+        <year>1970-01-01T00:00:00+03:00</year>
+        <origin>USA</origin>
+        <location>
+            <country>Canada</country>
+            <city>Toronto</city>
+            <street>12 Avenue</street>
+            <house>22</house>
+        </location>
+    </car>
+    <car>
+        <name>amc rebel sst (sw)</name>
+        <milesPerGallon>0</milesPerGallon>
+        <cylinders>8</cylinders>
+        <displacement>360</displacement>
+        <horsepower>175</horsepower>
+        <year>1970-01-01T00:00:00+03:00</year>
+        <origin>USA</origin>
+        <location>
+            <country>USA</country>
+            <city>Washington</city>
+            <street>12 Main street</street>
+            <house>2</house>
+        </location>
+    </car>
+    <car>
+        <name>plymouth 'cuda 340</name>
+        <milesPerGallon>0</milesPerGallon>
+        <cylinders>8</cylinders>
+        <displacement>340</displacement>
+        <horsepower>160</horsepower>
+        <year>1970-01-01T00:00:00+03:00</year>
+        <origin>USA</origin>
+        <location>
+            <country>USA</country>
+            <city>Jersey</city>
+            <street>12 Ave</street>
+            <house>112</house>
+        </location>
+    </car>
+    <car>
+        <name>ford mustang boss 302</name>
+        <milesPerGallon>0</milesPerGallon>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <horsepower>140</horsepower>
+        <year>1970-01-01T00:00:00+03:00</year>
+        <origin>USA</origin>
+        <location>
+            <country>USA</country>
+            <city>NY</city>
+            <street>12 Long street</street>
+            <house>11</house>
+        </location>
+    </car>
+</cars>
