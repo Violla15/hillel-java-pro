@@ -6,7 +6,7 @@
         <cylinders>8</cylinders>
         <displacement>318</displacement>
         <horsepower>150</horsepower>
-        <year>1970-01-01T00:00:00+03:00</year>
+        <year>1970-01-01</year>
         <origin>USA</origin>
         <location>
             <country>USA</country>
@@ -21,7 +21,7 @@
         <cylinders>8</cylinders>
         <displacement>454</displacement>
         <horsepower>220</horsepower>
-        <year>1970-01-01T00:00:00+03:00</year>
+        <year>1970-01-01</year>
         <origin>USA</origin>
         <location>
             <country>USA</country>
@@ -36,7 +36,7 @@
         <cylinders>8</cylinders>
         <displacement>351</displacement>
         <horsepower>153</horsepower>
-        <year>1970-01-01T00:00:00+03:00</year>
+        <year>1970-01-01</year>
         <origin>USA</origin>
         <location>
             <country>Canada</country>
@@ -51,7 +51,7 @@
         <cylinders>8</cylinders>
         <displacement>360</displacement>
         <horsepower>175</horsepower>
-        <year>1970-01-01T00:00:00+03:00</year>
+        <year>1970-01-01</year>
         <origin>USA</origin>
         <location>
             <country>USA</country>
@@ -66,7 +66,7 @@
         <cylinders>8</cylinders>
         <displacement>340</displacement>
         <horsepower>160</horsepower>
-        <year>1970-01-01T00:00:00+03:00</year>
+        <year>1970-01-01</year>
         <origin>USA</origin>
         <location>
             <country>USA</country>
@@ -81,7 +81,7 @@
         <cylinders>8</cylinders>
         <displacement>302</displacement>
         <horsepower>140</horsepower>
-        <year>1970-01-01T00:00:00+03:00</year>
+        <year>1970-01-01</year>
         <origin>USA</origin>
         <location>
             <country>USA</country>

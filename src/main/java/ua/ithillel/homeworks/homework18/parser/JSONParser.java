@@ -20,6 +20,7 @@ public class JSONParser {
             }.getType();
             List<Car> carList = new Gson().fromJson(reader, listType);
             cars.addAll(carList);
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

@@ -2,6 +2,7 @@ package ua.ithillel.homeworks.homework18.entity;
 
 import jakarta.xml.bind.annotation.*;
 
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import lombok.*;
 
 import java.util.Date;
@@ -22,6 +23,7 @@ public class Car extends CarsWrapper {
     private long cylinders;
     private long displacement;
     private long horsepower;
+    @XmlJavaTypeAdapter(DateAdapter.class)
     private Date year;
     private Origin origin;
     private Location location;
