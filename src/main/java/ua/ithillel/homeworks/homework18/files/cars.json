@@ -1,0 +1,200 @@
+[
+  {
+    "name": "chevrolet chevelle malibu",
+    "miles_per_Gallon": 18,
+    "cylinders": 8,
+    "displacement": 307,
+    "horsepower": 130,
+    "year": "1970-01-01",
+    "origin": "USA"
+  },
+  {
+    "name": "buick skylark 320",
+    "miles_per_Gallon": 15,
+    "cylinders": 8,
+    "displacement": 350,
+    "horsepower": 165,
+    "year": "1970-01-01",
+    "origin": "USA"
+  },
+  {
+    "name": "plymouth satellite",
+    "miles_per_Gallon": 18,
+    "cylinders": 8,
+    "displacement": 318,
+    "horsepower": 150,
+    "year": "1970-01-01",
+    "origin": "USA",
+    "location": {
+      "country": "USA",
+      "city": "Las-Vegas",
+      "street": "12 Strip",
+      "house": 23
+    }
+  },
+  {
+    "name": "amc rebel sst",
+    "miles_per_Gallon": 16,
+    "cylinders": 8,
+    "displacement": 304,
+    "horsepower": 150,
+    "year": "1970-01-01",
+    "origin": "USA"
+  },
+  {
+    "name": "ford torino",
+    "miles_per_Gallon": 17,
+    "cylinders": 8,
+    "displacement": 302,
+    "horsepower": 140,
+    "year": "1970-01-01",
+    "origin": "USA"
+  },
+  {
+    "name": "ford galaxie 500",
+    "miles_per_Gallon": 15,
+    "cylinders": 8,
+    "displacement": 429,
+    "horsepower": 198,
+    "year": "1970-01-01",
+    "origin": "USA"
+  },
+  {
+    "name": "chevrolet impala",
+    "miles_per_Gallon": 14,
+    "cylinders": 8,
+    "displacement": 454,
+    "horsepower": 220,
+    "year": "1970-01-01",
+    "origin": "USA",
+    "location": {
+      "country": "USA",
+      "city": "NY",
+      "street": "1 Jason Street",
+      "house": 22
+    }
+  },
+  {
+    "name": "plymouth fury iii",
+    "miles_per_Gallon": 14,
+    "cylinders": 8,
+    "displacement": 440,
+    "horsepower": 215,
+    "year": "1970-01-01",
+    "origin": "USA"
+  },
+  {
+    "name": "pontiac catalina",
+    "miles_per_Gallon": 14,
+    "cylinders": 8,
+    "displacement": 455,
+    "horsepower": 225,
+    "year": "1970-01-01",
+    "origin": "USA"
+  },
+  {
+    "name": "amc ambassador dpl",
+    "miles_per_Gallon": 15,
+    "cylinders": 8,
+    "displacement": 390,
+    "horsepower": 190,
+    "year": "1970-01-01",
+    "origin": "USA"
+  },
+  {
+    "name": "citroen ds-21 pallas",
+    "miles_per_Gallon": null,
+    "cylinders": 4,
+    "displacement": 133,
+    "horsepower": 115,
+    "year": "1970-01-01",
+    "origin": "Europe"
+  },
+  {
+    "name": "chevrolet chevelle concours (sw)",
+    "miles_per_Gallon": null,
+    "cylinders": 8,
+    "displacement": 350,
+    "horsepower": 165,
+    "year": "1970-01-01",
+    "origin": "USA"
+  },
+  {
+    "name": "ford torino (sw)",
+    "miles_per_Gallon": null,
+    "cylinders": 8,
+    "displacement": 351,
+    "horsepower": 153,
+    "year": "1970-01-01",
+    "origin": "USA",
+    "location": {
+      "country": "Canada",
+      "city": "Toronto",
+      "street": "12 Avenue",
+      "house": 22
+    }
+  },
+  {
+    "name": "plymouth satellite (sw)",
+    "miles_per_Gallon": null,
+    "cylinders": 8,
+    "displacement": 383,
+    "horsepower": 175,
+    "year": "1970-01-01",
+    "origin": "USA"
+  },
+  {
+    "name": "amc rebel sst (sw)",
+    "miles_per_Gallon": null,
+    "cylinders": 8,
+    "displacement": 360,
+    "horsepower": 175,
+    "year": "1970-01-01",
+    "origin": "USA",
+    "location": {
+      "country": "USA",
+      "city": "Washington",
+      "street": "12 Main street",
+      "house": 2
+    }
+  },
+  {
+    "name": "dodge challenger se",
+    "miles_per_Gallon": 15,
+    "cylinders": 8,
+    "displacement": 383,
+    "horsepower": 170,
+    "year": "1970-01-01",
+    "origin": "USA"
+  },
+  {
+    "name": "plymouth 'cuda 340",
+    "miles_per_Gallon": 14,
+    "cylinders": 8,
+    "displacement": 340,
+    "horsepower": 160,
+    "year": "1970-01-01",
+    "origin": "USA",
+    "location": {
+      "country": "USA",
+      "city": "Jersey",
+      "street": "12 Ave",
+      "house": 112
+    }
+  },
+  {
+    "name": "ford mustang boss 302",
+    "miles_per_Gallon": null,
+    "cylinders": 8,
+    "displacement": 302,
+    "horsepower": 140,
+    "year": "1970-01-01",
+    "origin": "USA",
+    "location": {
+      "country": "USA",
+      "city": "NY",
+      "street": "12 Long street",
+      "house": 11
+    }
+  }
+]

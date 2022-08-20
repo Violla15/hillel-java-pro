@@ -1,0 +1,168 @@
+[
+  {
+    "author": "Chinua Achebe",
+    "genre": "Fantasy",
+    "description": "https://en.wikipedia.org/wiki/Things_Fall_Apart\n",
+    "price": 209,
+    "title": "Things Fall Apart",
+    "publish_date": 1958
+  },
+  {
+    "author": "Hans Christian Andersen",
+    "genre": "Romanse",
+    "description": "https://en.wikipedia.org/wiki/Fairy_Tales_Told_for_Children._First_Collection.\n",
+    "price": 784,
+    "title": "Fairy tales",
+    "publish_date": 1836
+  },
+  {
+    "author": "Dante Alighieri",
+    "genre": "Fantasy",
+    "description": "https://en.wikipedia.org/wiki/Divine_Comedy\n",
+    "price": 928,
+    "title": "The Divine Comedy",
+    "publish_date": 1315
+  },
+  {
+    "author": "Unknown",
+    "genre": "Sumer and Akkadian Empire",
+    "description": "https://en.wikipedia.org/wiki/Epic_of_Gilgamesh\n",
+    "price": 160,
+    "title": "The Epic Of Gilgamesh",
+    "publish_date": -1700
+  },
+  {
+    "author": "Unknown",
+    "genre": "Fantasy",
+    "description": "https://en.wikipedia.org/wiki/Book_of_Job\n",
+    "price": 176,
+    "title": "The Book Of Job",
+    "publish_date": -600
+  },
+  {
+    "author": "Unknown",
+    "genre": "Roman",
+    "description": "https://en.wikipedia.org/wiki/One_Thousand_and_One_Nights\n",
+    "price": 288,
+    "title": "One Thousand and One Nights",
+    "publish_date": 1200
+  },
+  {
+    "author": "Unknown",
+    "genre": "Fantasy",
+    "description": "https://en.wikipedia.org/wiki/Nj%C3%A1ls_saga\n",
+    "price": 384,
+    "title": "Nj\u00e1l's Saga",
+    "publish_date": 1350
+  },
+  {
+    "author": "Jane Austen",
+    "genre": "Roman",
+    "description": "https://en.wikipedia.org/wiki/Pride_and_Prejudice\n",
+    "price": 226,
+    "title": "Pride and Prejudice",
+    "publish_date": 1813
+  },
+  {
+    "author": "Honor\u00e9 de Balzac",
+    "genre": "Horror",
+    "description": "https://en.wikipedia.org/wiki/Le_P%C3%A8re_Goriot\n",
+    "price": 443,
+    "title": "Le P\u00e8re Goriot",
+    "publish_date": 1835
+  },
+  {
+    "author": "Samuel Beckett",
+    "genre": "Fantasy",
+    "description": "https://en.wikipedia.org/wiki/Molloy_(novel)\n",
+    "price": 256,
+    "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
+    "publish_date": 1952
+  },
+  {
+    "author": "Giovanni Boccaccio",
+    "genre": "Italy",
+    "description": "https://en.wikipedia.org/wiki/The_Decameron\n",
+    "price": 1024,
+    "title": "The Decameron",
+    "publish_date": 1351
+  },
+  {
+    "author": "Jorge Luis Borges",
+    "genre": "Fantasy",
+    "description": "https://en.wikipedia.org/wiki/Ficciones\n",
+    "price": 224,
+    "title": "Ficciones",
+    "publish_date": 1965
+  },
+  {
+    "author": "Emily Bront\u00eb",
+    "genre": "Fantasy",
+    "description": "https://en.wikipedia.org/wiki/Wuthering_Heights\n",
+    "price": 342,
+    "title": "Wuthering Heights",
+    "publish_date": 1847
+  },
+  {
+    "author": "Albert Camus",
+    "genre": "Fantasy",
+    "description": "https://en.wikipedia.org/wiki/The_Stranger_(novel)\n",
+    "price": 185,
+    "title": "The Stranger",
+    "publish_date": 1942
+  },
+  {
+    "author": "Paul Celan",
+    "genre": "Romania, France",
+    "imageLink": "images/poems-paul-celan.jpg",
+    "description": "\n",
+    "price": 320,
+    "title": "Poems",
+    "publish_date": 1952
+  },
+  {
+    "author": "Louis-Ferdinand C\u00e9line",
+    "genre": "France",
+    "imageLink": "images/voyage-au-bout-de-la-nuit.jpg",
+    "description": "https://en.wikipedia.org/wiki/Journey_to_the_End_of_the_Night\n",
+    "price": 505,
+    "title": "Journey to the End of the Night",
+    "publish_date": 1932
+  },
+  {
+    "author": "Miguel de Cervantes",
+    "genre": "Spain",
+    "imageLink": "images/don-quijote-de-la-mancha.jpg",
+    "description": "https://en.wikipedia.org/wiki/Don_Quixote\n",
+    "price": 1056,
+    "title": "Don Quijote De La Mancha",
+    "publish_date": 1610
+  },
+  {
+    "author": "Geoffrey Chaucer",
+    "genre": "England",
+    "imageLink": "images/the-canterbury-tales.jpg",
+    "description": "https://en.wikipedia.org/wiki/The_Canterbury_Tales\n",
+    "price": 544,
+    "title": "The Canterbury Tales",
+    "publish_date": 1450
+  },
+  {
+    "author": "Anton Chekhov",
+    "genre": "Fantasy",
+    "imageLink": "images/stories-of-anton-chekhov.jpg",
+    "description": "https://en.wikipedia.org/wiki/List_of_short_stories_by_Anton_Chekhov\n",
+    "price": 194,
+    "title": "Stories",
+    "publish_date": 1886
+  },
+  {
+    "author": "Joseph Conrad",
+    "genre": "Roman",
+    "imageLink": "images/nostromo.jpg",
+    "description": "https://en.wikipedia.org/wiki/Nostromo\n",
+    "price": 320,
+    "title": "Nostromo",
+    "publish_date": 1904
+  }
+]

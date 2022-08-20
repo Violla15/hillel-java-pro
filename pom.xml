@@ -55,6 +55,18 @@
         </dependency>
     </dependencies>
 
+
+    <developers>
+        <developer>
+            <name>Violetta</name>
+            <email>churikova.violetta@gmail.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+
     <build>
         <finalName>hillel-pro</finalName>
         <plugins>
