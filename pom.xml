@@ -7,12 +7,25 @@
     <groupId>ua.ithillel</groupId>
     <artifactId>hillel-java-pro</artifactId>
     <version>1.0</version>
+
+
+    <developers>
+        <developer>
+            <name>Violetta</name>
+            <email>churikova.violetta@gmail.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
