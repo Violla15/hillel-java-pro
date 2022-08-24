@@ -14,6 +14,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -22,10 +23,9 @@ import java.util.Map;
 @Setter
 public class MachineReportMapper implements ReportMapper<MachineReport> {
     private List<MachineReport> machineReports = new ArrayList<>();
-    private List<MachineReport> listStatus_R = new ArrayList<>();
     private List<MachineReport> listStatus_F = new ArrayList<>();
+    private List<MachineReport> listStatus_R = new ArrayList<>();
     private List<MachineReport> listStatus_C = new ArrayList<>();
-
 
     @Override
     public List<MachineReport> readAll(Path path) {
@@ -52,6 +52,7 @@ public class MachineReportMapper implements ReportMapper<MachineReport> {
 
     @Override
     public void populateMap(Map<Status, List<MachineReport>> map, List<MachineReport> machineReports) {
+
         for (MachineReport machineReport : machineReports) {
             if (machineReport.getStatus() == Status.C) {
                 listStatus_C.add(machineReport);
@@ -70,7 +71,8 @@ public class MachineReportMapper implements ReportMapper<MachineReport> {
 
 
     @Override
-    public void populateMapParallel(Map<Status, List<MachineReport>> map, List<MachineReport> machineReports)
+    public void populateMapParallel
+            (Map<Status, List<MachineReport>> map, List<MachineReport> machineReports)
             throws InterruptedException {
 
         Thread tread = new Thread(() ->
@@ -80,8 +82,8 @@ public class MachineReportMapper implements ReportMapper<MachineReport> {
                 populateMap(map, machineReports.subList(machineReports.size() >> 2, machineReports.size())));
 
         tread.start();
-        tread2.start();
         tread.join();
+        tread2.start();
         tread2.join();
     }
 }

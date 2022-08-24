@@ -28,6 +28,7 @@ public class Homework19 {
     }
 
     public static void message(MachineReportMapper mapper) {
+
         System.out.println("Status F : " + mapper.getListStatus_F().size() + " reports");
         System.out.println("Status R : " + mapper.getListStatus_R().size() + " reports");
         System.out.println("Status C : " + mapper.getListStatus_C().size() + " reports");
@@ -39,9 +40,9 @@ public class Homework19 {
         mapper.readAll(PATH);
         long startTime = Instant.now().toEpochMilli();
         mapper.populateMap(statusListMap, mapper.getMachineReports());
+        message(mapper);
         long endTime = Instant.now().toEpochMilli();
         long timeElapsed = endTime - startTime;
-        message(mapper);
         System.out.println("Execution time : " + timeElapsed + " ms");
     }
 
@@ -55,9 +56,9 @@ public class Homework19 {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        message(mapper2);
         long endTime = Instant.now().toEpochMilli();
         long timeElapsed = endTime - start;
-        message(mapper2);
         System.out.println("Execution time : " + timeElapsed + " ms");
     }
 }
