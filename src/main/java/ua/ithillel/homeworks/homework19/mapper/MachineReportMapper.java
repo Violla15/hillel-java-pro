@@ -3,6 +3,8 @@ package ua.ithillel.homeworks.homework19.mapper;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
+import lombok.Getter;
+import lombok.Setter;
 import ua.ithillel.homeworks.homework19.model.MachineReport;
 import ua.ithillel.homeworks.homework19.model.Status;
 
@@ -12,18 +14,23 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
-import static ua.ithillel.homeworks.homework19.Homework19.*;
-
+@Getter
+@Setter
 public class MachineReportMapper implements ReportMapper<MachineReport> {
+    private List<MachineReport> machineReports = new ArrayList<>();
+    private List<MachineReport> listStatus_R = new ArrayList<>();
+    private List<MachineReport> listStatus_F = new ArrayList<>();
+    private List<MachineReport> listStatus_C = new ArrayList<>();
 
 
     @Override
     public List<MachineReport> readAll(Path path) {
-        try (BufferedReader br = Files.newBufferedReader(myPath, StandardCharsets.UTF_8)) {
+        List<MachineReport> reportList = new ArrayList<>();
+        try (BufferedReader br = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
 
             HeaderColumnNameMappingStrategy<MachineReport> strategy
                     = new HeaderColumnNameMappingStrategy<>();
@@ -34,12 +41,13 @@ public class MachineReportMapper implements ReportMapper<MachineReport> {
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
 
-            machineReports = csvToBean.parse();
+            reportList = csvToBean.parse();
         } catch (
                 IOException e) {
             throw new RuntimeException(e);
         }
-        return machineReports;
+        machineReports.addAll(reportList);
+        return reportList;
     }
 
     @Override
@@ -66,10 +74,10 @@ public class MachineReportMapper implements ReportMapper<MachineReport> {
             throws InterruptedException {
 
         Thread tread = new Thread(() ->
-                populateMap(map, machineReports.subList(0, machineReports.size() / 2)));
+                populateMap(map, machineReports.subList(0, machineReports.size() >> 2)));
 
         Thread tread2 = new Thread(() ->
-                populateMap(map, machineReports.subList(machineReports.size() / 2, machineReports.size())));
+                populateMap(map, machineReports.subList(machineReports.size() >> 2, machineReports.size())));
 
         tread.start();
         tread2.start();
