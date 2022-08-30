@@ -1,4 +1,4 @@
-CREATE TABLE car_rent." car_rent.roles"
+CREATE TABLE car_rent.roles
 (
     id   integer,
     role character varying NOT NULL,
@@ -22,46 +22,20 @@ CREATE TABLE car_rent.manager
         NOT VALID
 );
 
-
-CREATE TABLE car_rent.orders
-(
-    id         integer,
-    date       timestamp without time zone NOT NULL,
-    car_id     integer,
-    clint_id   integer,
-    manager_id integer,
-    PRIMARY KEY (id),
-    CONSTRAINT orders_cars_id_fk FOREIGN KEY (car_id)
-        REFERENCES car_rent.cars (id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-        NOT VALID,
-    CONSTRAINT orders_clients_id_fk FOREIGN KEY (clint_id)
-        REFERENCES car_rent.clients (id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-        NOT VALID,
-    CONSTRAINT orders_manager_id_fk FOREIGN KEY (manager_id)
-        REFERENCES car_rent.manager (id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-        NOT VALID
-);
-
 ALTER TABLE car_rent.cars
-    ADD manager integer();
+    ADD available BOOLEAN;
+
 
 ALTER TABLE car_rent.orders
     ADD FOREIGN KEY (manager) REFERENCES car_rent.manager (id);
 
 
-
-INSERT INTO car_rent.manager(id, "name", login, "password", email, "role")
+INSERT INTO car_rent.managers(id, "name", login, "password", email, "role")
 VALUES (1, 'Kyle', 'admin', 1111, 'kyle@mail.com', 1),
        (2, 'Alex', 'alex', 2222, 'alex@mail.com', 2),
        (3, 'Paul', 'paul', 222322, 'paul@mail.com', 2),
        (4, 'Boris', 'britva', 333, 'boris@mail.com', 2);
-
+    (5, 'Nick', 'petrov','nick3000', 'petrov@mail.com', 1);
 
 
 INSERT INTO car_rent.cars (id, manufacturer, model, "year", price)
@@ -74,16 +48,12 @@ VALUES (5, 'BMV', 'X3', 2014, 330),
 
 
 INSERT INTO car_rent.clients (id, "name", surname, phone)
-VALUES (4, 'Bod', 'Black', '5678819594'),
+VALUES (1, 'Liza', 'Sokolova', '0984563221'),
+       (2, 'Ivan', 'Li', '0978654325'),
+       (3, 'Anastasia', 'Cat', '09376223344'),
+       (4, 'Bod', 'Black', '5678819594'),
        (5, 'Nick', 'Ivanov', '23567890');
 
-
-INSERT INTO car_rent.manager (id, "name", login, "password", email, "role")
-VALUES (1, 'Liza', 'Sokolova', 'Liza', 'sokolova', 'sokolova@mail.com', 2),
-       (2, 'Ivan', 'Sokolov', '34566', 'ivan55', 'ivan@mail.com', 2),
-       (3, 'Anastasia', 'Vasilyeva', 'ast', '223344', 'anastasia@mail.com', 2),
-       (4, 'Valeria', 'Churikova', 'valeria', '3003', 'churikova@mail.com', 2),
-       (5, 'Nick', 'Petrov', 'petrov2022' 'nick3000', 'petrov@mail.com', 2);
 
 
 INSERT INTO car_rent.orders(id, date, car_id, client_id, manager_id)
@@ -94,9 +64,9 @@ VALUES (2, '20.10.2021', 1, 1, 4),
        (5, '08.04.2022', 9, 3, 2);
 
 -- / task 1/ --
-SELECT roles
-FROM car_rent.roles
-WHERE role = 'Admin';
+SELECT managers
+FROM car_rent.managers
+WHERE role = 1;
 
 -- / task 2/ --
 SELECT *
@@ -104,8 +74,14 @@ FROM car_rent.orders
 WHERE date >'2022-01-28';
 
 -- / task 3/ --
-SELECT MAX(price) AS LargestPrice
-FROM car_rent.cars;
+SELECT *
+FROM car_rent.cars
+WHERE price IN (SELECT MAX(price) FROM car_rent.cars)
+
+
+SELECT id, manufacturer, model, "year", price
+FROM car_rent.cars
+WHERE price IS MAX(price);
 
 -- / task 4/ --
 SELECT COUNT('Manager')
@@ -114,11 +90,12 @@ FROM car_rent.roles;
 -- / task 5/ --
 SELECT manufacturer, model
 FROM car_rent.cars
-WHERE available IS FALSE;
+         JOIN car_rent.orders ON orders.car_id = cars.id;
 
 -- / task 6/ --
-SELECT DISTINCT manufacturer
-FROM car_rent.cars;
+SELECT count(*), manufacturer as COUNT
+FROM car_rent.cars
+GROUP BY manufacturer;
 
 -- / task 7/ --
 BEGIN;
@@ -127,5 +104,6 @@ VALUES (6, '20.08.2022', 10, 3, 2),
        (7, '13.06.2022', 6, 5, 4);
 UPDATE car_rent.cars
 SET available = 'false'
-WHERE id = 6  AND id = 10;
+WHERE id = 6
+  AND id = 10;
 COMMIT;
