@@ -34,8 +34,8 @@ INSERT INTO car_rent.managers(id, "name", login, "password", email, "role")
 VALUES (1, 'Kyle', 'admin', 1111, 'kyle@mail.com', 1),
        (2, 'Alex', 'alex', 2222, 'alex@mail.com', 2),
        (3, 'Paul', 'paul', 222322, 'paul@mail.com', 2),
-       (4, 'Boris', 'britva', 333, 'boris@mail.com', 2);
-    (5, 'Nick', 'petrov','nick3000', 'petrov@mail.com', 1);
+       (4, 'Boris', 'britva', 333, 'boris@mail.com', 2),
+       (5, 'Nick', 'petrov', nick3000, 'petrov@mail.com', 1);
 
 
 INSERT INTO car_rent.cars (id, manufacturer, model, "year", price)
@@ -79,23 +79,22 @@ FROM car_rent.cars
 WHERE price IN (SELECT MAX(price) FROM car_rent.cars)
 
 
-SELECT id, manufacturer, model, "year", price
-FROM car_rent.cars
-WHERE price IS MAX(price);
-
 -- / task 4/ --
 SELECT COUNT('Manager')
 FROM car_rent.roles;
+
 
 -- / task 5/ --
 SELECT manufacturer, model
 FROM car_rent.cars
          JOIN car_rent.orders ON orders.car_id = cars.id;
 
+
 -- / task 6/ --
-SELECT count(*), manufacturer as COUNT
+SELECT count(*), manufacturer as manufacturer
 FROM car_rent.cars
 GROUP BY manufacturer;
+
 
 -- / task 7/ --
 BEGIN;
