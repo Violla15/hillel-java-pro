@@ -53,7 +53,6 @@
             <artifactId>hibernate-core</artifactId>
             <version>6.1.2.Final</version>
         </dependency>
-    </dependencies>
 
         <dependency>
             <groupId>com.opencsv</groupId>
