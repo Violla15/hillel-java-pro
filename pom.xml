@@ -8,8 +8,6 @@
     <artifactId>hillel-java-pro</artifactId>
     <version>1.0</version>
 
-
-    
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -57,7 +55,12 @@
         </dependency>
     </dependencies>
 
-
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.5.2</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <finalName>hillel-pro</finalName>
