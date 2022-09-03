@@ -8,18 +8,6 @@
     <artifactId>hillel-java-pro</artifactId>
     <version>1.0</version>
 
-
-    <developers>
-        <developer>
-            <name>Violetta</name>
-            <email>churikova.violetta@gmail.com</email>
-            <roles>
-                <role>developer</role>
-            </roles>
-        </developer>
-    </developers>
-
-
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -55,12 +43,23 @@
         </dependency>
 
         <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.4.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.1.2.Final</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
             <version>5.5.2</version>
         </dependency>
     </dependencies>
-
 
     <build>
         <finalName>hillel-pro</finalName>
