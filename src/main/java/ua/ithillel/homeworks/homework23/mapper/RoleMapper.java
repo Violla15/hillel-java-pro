@@ -16,11 +16,11 @@ public class RoleMapper implements DatabaseObjectMapper<Role> {
         Role role = null;
         if (resultSet.next()) {
             if (Role.ADMIN.getValue() == resultSet.getInt(1)) {
-                return role = Role.ADMIN;
-            } else if (Role.MANAGER.getValue() == resultSet.getInt(2)) {
-                return role = Role.MANAGER;
-            } else if (Role.CLIENT.getValue() == resultSet.getInt(3)) {
-                return role = Role.CLIENT;
+                return Role.ADMIN;
+            } else if (Role.MANAGER.getValue() == resultSet.getInt(1)) {
+                return Role.MANAGER;
+            } else if (Role.CLIENT.getValue() == resultSet.getInt(1)) {
+                return Role.CLIENT;
             }
         }
         return role;

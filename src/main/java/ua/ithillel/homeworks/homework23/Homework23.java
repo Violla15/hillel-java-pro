@@ -2,8 +2,10 @@ package ua.ithillel.homeworks.homework23;
 
 import ua.ithillel.homeworks.homework23.entity.Manager;
 import ua.ithillel.homeworks.homework23.entity.Order;
+import ua.ithillel.homeworks.homework23.entity.Role;
 import ua.ithillel.homeworks.homework23.mapper.ManagerMapper;
 import ua.ithillel.homeworks.homework23.mapper.OrderMapper;
+import ua.ithillel.homeworks.homework23.mapper.RoleMapper;
 import ua.ithillel.lectures.lectute_23.connection.DatabaseConfig;
 import ua.ithillel.lectures.lectute_23.entity.Car;
 import ua.ithillel.lectures.lectute_23.mapper.CarMapper;
@@ -32,7 +34,6 @@ public class Homework23 {
             List<Manager> managers = mapperManager.mapObjects(resultSet);
             managers.forEach(System.out::println);
 
-
             // task - 2 //
             ResultSet resultSet2 = statement.executeQuery("SELECT * FROM car_rent.orders WHERE date >'2022-01-28';");
             DatabaseObjectMapper<Order> orderMapper = new OrderMapper();
@@ -46,19 +47,18 @@ public class Homework23 {
             System.out.println(car);
 
             // task - 4 //
-            ResultSet resultSet4 = statement.executeQuery("SELECT * FROM car_rent.managers WHERE role = 2;");
-            DatabaseObjectMapper<Manager> mapper = new ManagerMapper();
-            List<Manager> roles = mapper.mapObjects(resultSet4);
+            ResultSet resultSet4 = statement.executeQuery("SELECT * FROM car_rent.managers JOIN car_rent.roles ON managers.role = roles.id ;");
+            DatabaseObjectMapper<Role> mapper = new RoleMapper();
+            List<Role> roles = mapper.mapObjects(resultSet4);
             System.out.println("Count of managers with role 'Manager' - " + roles.size());
-
 
             // task - 5 //
             ResultSet resultSet5 = statement.executeQuery("SELECT * FROM car_rent.cars JOIN car_rent.orders ON orders.car_id = cars.id;");
             DatabaseObjectMapper<Car> carMapper2 = new CarMapper();
             List<Car> carOrders = carMapper2.mapObjects(resultSet5);
-            for (Car c : carOrders)
+            for (Car c : carOrders) {
                 System.out.println(c.getManufacturer() + ", " + car.getModel());
-
+            }
 
             // task - 6//
             ResultSet resultSet6 = statement.executeQuery("SELECT * FROM car_rent.cars;");
@@ -78,14 +78,12 @@ public class Homework23 {
                 System.out.println("  " + cars.getKey() + "   :   " + cars.getValue());
             }
 
-
             // task - 7//
             connection.setAutoCommit(false);
             Statement psInsert = connection.createStatement();
-            psInsert.executeUpdate("INSERT INTO car_rent.orders (id, date, car_id,client_id, manager_id) VALUES (6, '20.08.2022', 10, 3, 2), (7, '13.06.2022', 6, 5, 4);");
+            psInsert.executeUpdate("INSERT INTO car_rent.orders (id, date, car_id,client_id, manager_id) VALUES (6, '2022-08-20', 10, 3, 2), (7, '2022-06-13', 6, 5, 4);");
             psInsert.executeUpdate("UPDATE car_rent.cars SET available = 'false' WHERE id = 6 AND id = 10;");
             connection.commit();
-
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -10,8 +10,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class ManagerMapper implements DatabaseObjectMapper<Manager> {
     @Override
     public Manager mapObject(ResultSet resultSet) throws SQLException {
@@ -38,8 +36,6 @@ public class ManagerMapper implements DatabaseObjectMapper<Manager> {
         manager.setPassword(resultSet.getString("password"));
         manager.setEmail(resultSet.getString("email"));
         manager.setRole(Role.of(resultSet.getInt("role")));
-
-
         return manager;
     }
 }

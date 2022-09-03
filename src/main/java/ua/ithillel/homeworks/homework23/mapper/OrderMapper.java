@@ -8,8 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderMapper implements DatabaseObjectMapper<Order>  {
-
+public class OrderMapper implements DatabaseObjectMapper<Order> {
 
     @Override
     public Order mapObject(ResultSet resultSet) throws SQLException {
