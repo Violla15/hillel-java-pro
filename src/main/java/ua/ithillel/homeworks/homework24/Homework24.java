@@ -36,7 +36,7 @@ public class Homework24 {
             CriteriaQuery<Manager> crq = cb.createQuery(Manager.class);
             Root<Manager> root = crq.from(Manager.class);
             crq.select(root).where(cb.lt(root.get("id"), 5));
-            List<?> list = session.createQuery(crq).getResultList();
+            List<Manager> list = session.createQuery(crq).getResultList();
             list.forEach(System.out::println);
         }
     }
@@ -65,7 +65,7 @@ public class Homework24 {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat(stringDate);
             Date date = simpleDateFormat.parse("2022-01-28");
             crq.select(root).where(cb.lessThan(root.get("date"), date));
-            List<?> list = session.createQuery(crq).getResultList();
+            List<Order> list = session.createQuery(crq).getResultList();
             list.forEach(System.out::println);
         } catch (ParseException e) {
             throw new RuntimeException(e);
